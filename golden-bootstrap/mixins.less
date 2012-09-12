@@ -1,0 +1,131 @@
+//
+// Golden Bootstrap Mixins
+// --------------------------------------------------
+
+#golden-bootstrap {
+
+    // Fixed
+    // --------------------------------------------------
+    .fixed (@gridColumnWidth, @gridGutterWidth) {
+        .spanX (@index) when (@index > 0) {
+            (~".span@{index}") { .span(@index); }
+            .spanX (@index - 1);
+        }
+        .spanX (0) {}
+        .span (@columns) {
+            .row {
+                .golden-small { width: ((@gridColumnWidth * @columns) + (@gridGutterWidth * (@columns - 1))) * @goldenSmall; }
+                .golden-large { width: ((@gridColumnWidth * @columns) + (@gridGutterWidth * (@columns - 1))) * @goldenLarge; }
+                .offset-golden-small { margin-left: ((@gridColumnWidth * @columns) + (@gridGutterWidth * (@columns - 1))) * @goldenSmall + @gridGutterWidth; }
+                .offset-golden-large { margin-left: ((@gridColumnWidth * @columns) + (@gridGutterWidth * (@columns - 1))) * @goldenLarge + @gridGutterWidth; }
+            }
+        }
+        .row {
+            .golden-small, .golden-large { float: left; }
+            > .golden-small, > .golden-large {
+                &:first-child { margin-left: @gridGutterWidth; }
+            }
+        }
+        .spanX(@gridColumns);
+    }
+
+
+    // Input
+    // --------------------------------------------------
+
+    .input (@gridColumnWidth, @gridGutterWidth) {
+        .spanX (@index) when (@index > 0) {
+            (~".span@{index}") { .span(@index); }
+            .spanX (@index - 1);
+        }
+        .spanX (0) {}
+        .span (@columns) {
+            .controls {
+                input.golden-small,
+                textarea.golden-small,
+                uneditable-input.golden-small { width: ((@gridColumnWidth * @columns) + (@gridGutterWidth * (@columns - 1))) * @goldenSmall - 14; }
+                input.golden-large,
+                textarea.golden-large,
+                uneditable-input.golden-large { width: ((@gridColumnWidth * @columns) + (@gridGutterWidth * (@columns - 1))) * @goldenLarge - 14; }
+            }
+        }
+        .controls {
+            input.golden-small,
+            textarea.golden-small,
+            uneditable-input.golden-small,
+            input.golden-large,
+            textarea.golden-large,
+            uneditable-input.golden-large { float: none; display: block; }
+        }
+        .controls-row {
+            input.golden-small,
+            textarea.golden-small,
+            uneditable-input.golden-small,
+            input.golden-large,
+            textarea.golden-large,
+            uneditable-input.golden-large { float: left; }
+        }
+        .spanX(@gridColumns);
+    }
+
+
+    // Fluid
+    // --------------------------------------------------
+
+    .fluid () {
+        .row-fluid {
+            .golden-small, .golden-large {
+                float: left;
+                .input-block-level;
+                margin-left: 0px;
+            }
+            .golden-small { width: percentage(@goldenSmall); }
+            .golden-large { width: percentage(@goldenLarge); }
+            .offset-golden-small { margin-left: percentage(@goldenSmall); }
+            .offset-golden-large { margin-left: percentage(@goldenLarge); }
+        }
+    }
+
+
+    // Responsive
+    // --------------------------------------------------
+
+    .responsive () {
+
+        @media (max-width: 767px) {
+            [class*="span"] .row, [class*="span"] .row-fluid {
+                .golden-small, .golden-large {
+                    float: none;
+                    display: block;
+                    width: auto;
+                    margin-left: 0;
+                }
+            }
+            [class*="span"] .controls, [class*="span"] .controls-row {
+                input.golden-small,
+                textarea.golden-small,
+                uneditable-input.golden-small,
+                input.golden-large,
+                textarea.golden-large,
+                uneditable-input.golden-large {
+                    float: none;
+                    display: block;
+                    width: 100%;
+                    margin-left: 0;
+                    min-height: 30px;
+                    .box-sizing(border-box);
+                }
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 979px) {
+            #golden-bootstrap > .fixed(@gridColumnWidth768, @gridGutterWidth768);
+            #golden-bootstrap > .input(@gridColumnWidth768, @gridGutterWidth768);
+        }
+
+        @media (min-width: 1200px) {
+            #golden-bootstrap > .fixed(@gridColumnWidth1200, @gridGutterWidth1200); 
+            #golden-bootstrap > .input(@gridColumnWidth1200, @gridGutterWidth1200); 
+        }
+    }
+}
