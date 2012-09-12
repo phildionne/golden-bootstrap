@@ -1,6 +1,8 @@
 # Golden Bootstrap
 Golden Bootstrap is a bunch of [less](http://lesscss.org/) written css rules giving you the [divine](http://en.wikipedia.org/wiki/Sacred_geometry) power of using golden ratio sized columns with [Bootstrap](http://twitter.github.com/bootstrap).
 
+Friendly doc [right here](http://phildionne.github.com/golden-bootstrap).
+
 ## Getting started
 Include `golden-bootstrap.less` in `bootstrap.less`, compile and that's it.
 
@@ -84,7 +86,7 @@ Apply Golden Bootstrap's grid to standard form controls through `.controls` for 
 </div><!-- /.controls -->
 ```
 
-Use .controls-row for inline behavior.
+Use `.controls-row` for inline behavior.
 
 ```html
 <div class="row">
