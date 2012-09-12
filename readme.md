@@ -1,5 +1,5 @@
 # Golden Bootstrap
-Golden Bootstrap is a bunch of less written css rules giving you the divine power of using golden ratio sized columns with Bootstrap.
+Golden Bootstrap is a bunch of [less](http://lesscss.org/) written css rules giving you the [divine](http://en.wikipedia.org/wiki/Sacred_geometry) power of using golden ratio sized columns with [Bootstrap](http://twitter.github.com/bootstrap).
 
 ## Getting started
 Include `golden-bootstrap.less` in `bootstrap.less`, compile and that's it.
@@ -11,7 +11,7 @@ Include `golden-bootstrap.less` in `bootstrap.less`, compile and that's it.
 ```
 
 ## How it works
-“Two quantities are in the golden ratio if the ratio of the sum of the quantities to the larger quantity is equal to the ratio of the larger quantity to the smaller one” (source). Under the hood it looks like this:
+“Two quantities are in the golden ratio if the ratio of the sum of the quantities to the larger quantity is equal to the ratio of the larger quantity to the smaller one” ([source](http://en.wikipedia.org/wiki/Golden_ratio)). Under the hood it looks like this:
 
 ```
 @goldenRatio:    1.6180339887498948482;
@@ -107,3 +107,18 @@ Like Bootstrap, you have to add another file to support responsive behaviors. To
 ```
 
 Golden Bootstrap uses `@gridColumnWidth768`, `@gridGutterWidth768`, `@gridColumnWidth1200` and `@gridGutterWidth1200` values specified in bootstrap's `variables.less` to adapt itself to mediaqueries.
+
+---
+
+# Author
+[Philippe Dionne](http://phildionne.com)
+
+# Copyright and license
+
+Copyright 2012 Philippe Dionne
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this work except in compliance with the License. You may obtain a copy of the License in the LICENSE file, or at:
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
