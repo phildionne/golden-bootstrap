@@ -2,7 +2,7 @@
 Golden Bootstrap is a bunch of less written css rules giving you the divine power of using golden ratio sized columns with Bootstrap.
 
 ## Getting started
-Include golden-bootstrap.less in bootstrap.less, compile and that's it.
+Include `golden-bootstrap.less` in `bootstrap.less`, compile and that's it.
 
 ```
 // Grid system and page structure
@@ -19,10 +19,10 @@ Include golden-bootstrap.less in bootstrap.less, compile and that's it.
 @goldenSmall:    1-@goldenLarge;
 ```
 
-Golden Bootstrap uses @gridColumnWidth and @gridGutterWidth values specified in bootstrap's variables.less to generate the grid system.
+Golden Bootstrap uses `@gridColumnWidth` and `@gridGutterWidth` values specified in bootstrap's `variables.less` to generate the grid system.
 
 ## Fixed
-Use Bootstrap's default fixed columns and nest a new .row with a set of .golden-small and .golden-large columns.
+Use Bootstrap's default fixed columns and nest a new `.row` with a set of `.golden-small` and `.golden-large` columns.
 
 ```html
 <div class="row">
@@ -35,10 +35,10 @@ Use Bootstrap's default fixed columns and nest a new .row with a set of .golden-
 </div>
 ```
 
-Using Golden Bootstrap comes with a notable drawback: you can't nest any .span* in a .golden-small and .golden-large column.
+Using Golden Bootstrap comes with a notable drawback: you can't nest any `.span*` in a `.golden-small` and `.golden-large` column.
 
 ### Fixed offsetting
-Add .offset-golden-small or .offset-golden-large to a golden* column to offset it by it's counterpart.
+Add `.offset-golden-small` or `.offset-golden-large` to a `golden*` column to offset it by it's counterpart.
 
 ```html
 <div class="row">
@@ -53,7 +53,7 @@ Add .offset-golden-small or .offset-golden-large to a golden* column to offset i
 ---
 
 ## Fluid
-Keep your regular fluid grid scaffolding. To divide any .span* by the golden ratio, simply nest .golden-small and .golden-large under a .row-fluid.
+Keep your regular fluid grid scaffolding. To divide any `.span*` by the golden ratio, simply nest `.golden-small` and `.golden-large` under a `.row-fluid`.
 
 ```html
 <div class="row-fluid">
@@ -67,15 +67,15 @@ Keep your regular fluid grid scaffolding. To divide any .span* by the golden rat
 ```
 
 ### Fluid nesting
-You can nest any fluid column in .golden-small and .golden-large.
+You can nest any fluid column in `.golden-small` and `.golden-large`.
 
 ### Fluid offsetting
-Use .offset-golden-small or .offset-golden-large to offset any golden* column by its counterpart.
+Use `.offset-golden-small` or `.offset-golden-large` to offset any `golden*` column by its counterpart.
 
 ---
 
 ## Forms
-Apply Golden Bootstrap's grid to standard form controls through .controls for stacked behavior.
+Apply Golden Bootstrap's grid to standard form controls through `.controls` for stacked behavior.
 
 ```html
 <div class="controls">
@@ -98,7 +98,7 @@ Use .controls-row for inline behavior.
 ```
 
 ## Responsive
-Like Bootstrap, you have to add another file to support responsive behaviors. To do so, simply include golden-bootstrap-responsive.less in responsive.less, compile and you're done.
+Like Bootstrap, you have to add another file to support responsive behaviors. To do so, simply include `golden-bootstrap-responsive.less` in `responsive.less`, compile and you're done.
 
 ```
 // GOLDEN BOOTSTRAP RESPONSIVE
@@ -106,4 +106,4 @@ Like Bootstrap, you have to add another file to support responsive behaviors. To
 @import "golden-bootstrap/golden-bootstrap-responsive.less";
 ```
 
-Golden Bootstrap uses @gridColumnWidth768, @gridGutterWidth768, @gridColumnWidth1200 and @gridGutterWidth1200 values specified in bootstrap's variables.less to adapt itself to mediaqueries.
+Golden Bootstrap uses `@gridColumnWidth768`, `@gridGutterWidth768`, `@gridColumnWidth1200` and `@gridGutterWidth1200` values specified in bootstrap's `variables.less` to adapt itself to mediaqueries.
