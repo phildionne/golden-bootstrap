@@ -19,7 +19,7 @@
   clear: both;
 }
 .hide-text {
-  font: a;
+  font: 0/0 a;
   color: transparent;
   text-shadow: none;
   background-color: transparent;
