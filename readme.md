@@ -1,8 +1,8 @@
 # Golden Bootstrap
-Golden Bootstrap is a tiny addon for [Bootstrap](http://getbootstrap.com/) giving you the [divine](http://en.wikipedia.org/wiki/Sacred_geometry) power of using golden ratio sized columns. Available both for [less](http://lesscss.org/) and [Sass]() CSS preprocessors.
+Golden Bootstrap is a tiny add-on for [Bootstrap](http://getbootstrap.com/) giving you the [divine](http://en.wikipedia.org/wiki/Sacred_geometry) power of using golden ratio sized columns. Available both for [Less](http://lesscss.org/) and [Sass](http://sass-lang.com/) CSS preprocessors.
 
 ## Usage
-Include `golden-bootstrap.less` or `golden-bootstrap.scss` in `bootstrap.less` or `bootstrap.scss`, and that's it.
+Include `golden-bootstrap.less` in `bootstrap.less` or `golden-bootstrap.scss` in `bootstrap.scss`, and that's it.
 
 ```sass
 // Core CSS
@@ -40,7 +40,7 @@ Then, like you would do with any other Bootstrap default column, simply use a se
 ## How it works
 “Two quantities are in the golden ratio if the ratio of the sum of the quantities to the larger quantity is equal to the ratio of the larger quantity to the smaller one” ([source](http://en.wikipedia.org/wiki/Golden_ratio)). Under the hood it looks like this:
 
-```
+```sass
 $golden-ratio:    1.6180339887498948482;
 $golden-lg:       (1 / $golden-ratio);
 $golden-sm:       (1 - $golden-lg);
