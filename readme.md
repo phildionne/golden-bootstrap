@@ -1,114 +1,62 @@
 # Golden Bootstrap
-Golden Bootstrap is a bunch of [less](http://lesscss.org/) written css rules giving you the [divine](http://en.wikipedia.org/wiki/Sacred_geometry) power of using golden ratio sized columns with [Bootstrap](http://twitter.github.com/bootstrap).
+Golden Bootstrap is a tiny addon for [Bootstrap](http://getbootstrap.com/) giving you the [divine](http://en.wikipedia.org/wiki/Sacred_geometry) power of using golden ratio sized columns. Available both for [less](http://lesscss.org/) and [Sass]() CSS preprocessors.
 
-Friendly doc [right here](http://phildionne.github.com/golden-bootstrap).
+## Usage
+Include `golden-bootstrap.less` or `golden-bootstrap.scss` in `bootstrap.less` or `bootstrap.scss`, and that's it.
 
-## Getting started
-Include `golden-bootstrap.less` in `bootstrap.less`, compile and that's it.
-
+```sass
+// Core CSS
+//...
+@import "golden-bootstrap/golden-bootstrap.scss"; // Add support for Golden Bootstrap
 ```
-// Grid system and page structure
-...
-@import "golden-bootstrap/golden-bootstrap.less"; // Add support for Golden Bootstrap
+Then, like you would do with any other Bootstrap default column, simply use a set of `.golden-sm` and `.golden-lg` columns:
+
+```html
+<div class="row">
+  <div class="col-golden-sm">...</div>
+  <div class="col-golden-lg">...</div>
+</div>
+```
+
+```html
+<div class="row">
+  <div class="col-golden-offset-sm">...</div>
+</div>
+
+<div class="row">
+  <div class="col-golden-offset-lg">...</div>
+</div>
+
+<form class="form-horizontal" role="form">
+  <div class="form-group">
+    <label class="col-golden-sm control-label">Email</label>
+    <div class="col-golden-lg">
+      <input type="email" class="form-control" placeholder="Email">
+    </div>
+  </div>
+</form>
 ```
 
 ## How it works
 “Two quantities are in the golden ratio if the ratio of the sum of the quantities to the larger quantity is equal to the ratio of the larger quantity to the smaller one” ([source](http://en.wikipedia.org/wiki/Golden_ratio)). Under the hood it looks like this:
 
 ```
-@goldenRatio:    1.6180339887498948482;
-@goldenLarge:    1/@goldenRatio;
-@goldenSmall:    1-@goldenLarge;
+$golden-ratio:    1.6180339887498948482;
+$golden-lg:       (1 / $golden-ratio);
+$golden-sm:       (1 - $golden-lg);
 ```
 
-Golden Bootstrap uses `@gridColumnWidth` and `@gridGutterWidth` values specified in bootstrap's `variables.less` to generate the grid system.
+Golden Bootstrap uses `$grid-gutter-width` values specified in bootstrap's `variables.scss` to generate the grid system.
 
-## Fixed
-Use Bootstrap's default fixed columns and nest a new `.row` with a set of `.golden-small` and `.golden-large` columns.
-
-```html
-<div class="row">
-  <div class="span9">
-    <div class="row">
-      <div class="golden-small">...</div>
-      <div class="golden-large">...</div>
-    </div>
-  </div>
-</div>
-```
-
-Using Golden Bootstrap comes with a notable drawback: you can't nest any `.span*` in a `.golden-small` and `.golden-large` column.
-
-### Fixed offsetting
-Add `.offset-golden-small` or `.offset-golden-large` to a `golden*` column to offset it by it's counterpart.
-
-```html
-<div class="row">
-  <div class="span9">
-    <div class="row">
-      <div class="golden-small offset-golden-large">...</div>
-    </div>
-  </div>
-</div>
-```
-
----
-
-## Fluid
-Keep your regular fluid grid scaffolding. To divide any `.span*` by the golden ratio, simply nest `.golden-small` and `.golden-large` under a `.row-fluid`.
-
-```html
-<div class="row-fluid">
-  <div class="span12">
-    <div class="row-fluid">
-      <div class="golden-small">...</div>
-      <div class="golden-large">...</div>
-    </div>
-  </div>
-</div>
-```
-
-### Fluid nesting
-You can nest any fluid column in `.golden-small` and `.golden-large`.
-
-### Fluid offsetting
-Use `.offset-golden-small` or `.offset-golden-large` to offset any `golden*` column by its counterpart.
-
----
-
-## Forms
-Apply Golden Bootstrap's grid to standard form controls through `.controls` for stacked behavior.
-
-```html
-<div class="controls">
-  <input class="golden-small" type="text" placeholder=".golden-small">
-  <input class="golden-large" type="text" placeholder=".golden-large">
-</div><!-- /.controls -->
-```
-
-Use `.controls-row` for inline behavior.
-
-```html
-<div class="row">
-  <div class="span9">
-    <div class="controls controls-row">
-      <input class="golden-small" type="text" placeholder=".golden-small">
-      <input class="golden-large" type="text" placeholder=".golden-large">
-    </div><!-- /.controls-row -->
-  </div>
-</div><!-- /.row -->
-```
 
 ## Responsive
-Like Bootstrap, you have to add another file to support responsive behaviors. To do so, simply include `golden-bootstrap-responsive.less` in `responsive.less`, compile and you're done.
 
-```
-// GOLDEN BOOTSTRAP RESPONSIVE
-// ------------------ 
-@import "golden-bootstrap/golden-bootstrap-responsive.less";
-```
 
-Golden Bootstrap uses `@gridColumnWidth768`, `@gridGutterWidth768`, `@gridColumnWidth1200` and `@gridGutterWidth1200` values specified in bootstrap's `variables.less` to adapt itself to mediaqueries.
+
+## Versionning
+
+Golden Bootstrap follows the same versionning than Bootstrap, see [versionning](https://github.com/twbs/bootstrap?source=c#versioning).
+
 
 ---
 
@@ -117,7 +65,7 @@ Golden Bootstrap uses `@gridColumnWidth768`, `@gridGutterWidth768`, `@gridColumn
 
 # Copyright and license
 
-Copyright 2012 Philippe Dionne
+Copyright 2014 Philippe Dionne
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this work except in compliance with the License. You may obtain a copy of the License in the LICENSE file, or at:
 
