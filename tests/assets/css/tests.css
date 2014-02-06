@@ -1,0 +1,8 @@
+.show-grid [class*="col"] {
+    border: 1px solid red;
+    background-color: #DDD;
+  }
+}
+
+.show-grid .col-golden-sm { background-color: #EEE; }
+.show-grid .col-golden-lg { background-color: #CCC; }
