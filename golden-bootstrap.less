@@ -1,0 +1,50 @@
+/*!
+ * Golden Bootstrap v3.1
+ *
+ * Licensed under the Apache License v2.0
+ *
+ * A quick project by Philippe Dionne (http://phildionne.com)
+ * Much love to @mdo, @fat and every collaborators to Bootstrap
+ */
+
+
+//
+// Variables
+// --------------------------------------------------
+
+@golden-ratio:    1.6180339887498948482;
+@golden-lg:       (1 / @golden-ratio);
+@golden-sm:       (1 - @golden-lg);
+
+
+//
+// Grid
+// --------------------------------------------------
+
+.make-col-golden (@grid-gutter-width) {
+  float: left;
+  position: relative;
+  // Prevent columns from collapsing when empty
+  min-height: 1px;
+  // Inner gutter via padding
+  padding-left:  (@grid-gutter-width / 2);
+  padding-right: (@grid-gutter-width / 2);
+}
+
+.col-golden-sm {
+  .make-col-golden(@grid-gutter-width);
+  width: percentage(@golden-sm);
+}
+
+.col-golden-lg {
+  .make-col-golden(@grid-gutter-width);
+  width: percentage(@golden-lg);
+}
+
+.col-golden-offset-sm {
+  margin-left: percentage(@golden-sm);
+}
+
+.col-golden-offset-lg {
+  margin-left: percentage(@golden-lg);
+}
